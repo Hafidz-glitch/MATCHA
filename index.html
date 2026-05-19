@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Botanical Brews | Artisanal Rituals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#795a49",
+                        "tertiary-fixed": "#e3e0f8",
+                        "on-surface": "#1b1c19",
+                        "on-primary-container": "#2f3e1b",
+                        "on-primary-fixed": "#121f02",
+                        "surface-container": "#f0eee9",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#53643d",
+                        "on-tertiary-fixed-variant": "#464558",
+                        "on-tertiary-fixed": "#1b1a2b",
+                        "background": "#fbf9f4",
+                        "surface-variant": "#e4e2dd",
+                        "surface-container-highest": "#e4e2dd",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-fixed-variant": "#5c4130",
+                        "on-tertiary-container": "#383749",
+                        "surface-container-low": "#f5f3ee",
+                        "secondary": "#765846",
+                        "on-primary-fixed-variant": "#3c4c27",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fbf9f4",
+                        "primary-fixed": "#d6e9b8",
+                        "on-background": "#1b1c19",
+                        "secondary-container": "#fdd5be",
+                        "inverse-primary": "#bbcd9e",
+                        "secondary-fixed": "#ffdbc8",
+                        "surface": "#fbf9f4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae8e3",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#2b1609",
+                        "outline-variant": "#c5c8bb",
+                        "tertiary": "#5e5c70",
+                        "tertiary-fixed-dim": "#c7c4db",
+                        "on-surface-variant": "#45483e",
+                        "primary": "#53643d",
+                        "primary-container": "#97a97c",
+                        "tertiary-container": "#a3a0b7",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "outline": "#75786d",
+                        "primary-fixed-dim": "#bbcd9e",
+                        "secondary-fixed-dim": "#e6bea9",
+                        "inverse-surface": "#30312e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-md": "24px",
+                        "section-padding": "80px",
+                        "stack-lg": "48px",
+                        "container-max-width": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "display-lg-mobile": ["EB Garamond"],
+                        "body-lg": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "body-md": ["DM Sans"],
+                        "display-lg": ["EB Garamond"],
+                        "label-sm": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuArGwH52T6VNpwFpFF4NsYZv_CN5M0TDALWJOYlxjHQqHAR6QPRjzXmwCGAdW8KZ8L1Da6QGtgedqeDczFmMubI0xYK4-xlK4GRD_G5wZukBOXSn9OSdRi3UGaoaN7cLlEPaMNsfOIEAKh99-r5x1h9AoExK08c-gRvEZmWqNqYIxX628fvfQyeX3NV9p8NKflGeyq1XWvdBFwhsvS1z0BtDqNMnQ9HVePj86U_BF-DbNulsW1MXZHUaStNYBEqKBIVAChnhBdqx6rn);
+            opacity: 0.04
+        }
+        .cart-drawer-transform {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+        }
+
+        /* Entrance Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating Hero Image */
+        @keyframes float {
+            0% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.02); }
+            100% { transform: translateY(0px) scale(1); }
+        }
+        .animate-float {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        /* Navigation Hover Effect */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Product Card Interactions */
+        .product-card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+        }
+
+        /* Button Micro-interactions */
+        .btn-elevated {
+            transition: all 0.3s ease;
+        }
+        .btn-elevated:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Cart Icon Bounce */
+        @keyframes cart-bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+        .animate-cart-bounce {
+            animation: cart-bounce 0.4s ease-out;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf9f4
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c5c8bb;
+            border-radius: 10px
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div class="grain-overlay"></div>
+<!-- Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-container-max-width mx-auto bg-background/95 backdrop-blur-md border-b border-outline-variant/20">
+<div class="font-headline-md text-headline-md text-primary italic cursor-pointer">Botanical Brews</div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="nav-link font-label-md text-label-md text-primary font-bold" href="#">Shop All</a>
+<a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Our Story</a>
+<a class="nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Subscriptions</a>
+</nav>
+<div class="flex items-center gap-gutter">
+<button class="relative hover:bg-surface-container-low/50 transition-all duration-300 p-2 rounded-full active:scale-95" id="openCart">
+<span class="material-symbols-outlined text-primary" id="cartIcon">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold" id="cartCount">0</span>
+</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero" class="w-full h-full object-cover animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoA3AbaRcXIo34dRE-6PsWaZFp56jKodIDmOQ-vqVjmlZC6QxLTsmaFP7wvCgFUq6GqmSJT3VleBpY-_OgrSlTZ9ZYc-9ppIqxVA7avQ6Kp58YpjS_rIIzEBjTPdED4oHda8RSXrzu-hLdpVqK1C4ViBdgVc7AUD3O0iS6vKVxTivtpogJa4vLAtmL_v0p9AKDtjrFugIOI2TU0CfOhppwfGfEVbcSbJo4NQ4JizxYarJt9MkaxE-czys5VhtTaQ1rVo_Y2OxPrnWv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+</div>
+<div class="reveal relative z-10 text-center px-margin-mobile max-w-4xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-stack-sm">Artisanal Rituals in Every Sip</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-2xl mx-auto">Discover the serene essence of botanicals through our carefully curated collection of ceremonial brews.</p>
+<a class="btn-elevated inline-block bg-primary text-on-primary px-stack-lg py-4 rounded-full font-label-md text-label-md active:scale-95 transition-transform duration-300 ease-out" href="#catalog">Explore the Catalog</a>
+</div>
+</section>
+<!-- Catalog Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto" id="catalog">
+<div class="reveal flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-stack-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Our Collection</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Signature Blends</h2>
+</div>
+<div class="h-px flex-grow mx-gutter hidden md:block bg-outline-variant/30"></div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs italic text-right">Crafted for moments of calm.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="reveal product-card-hover bg-surface border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col group">
+<div class="aspect-square overflow-hidden bg-surface-container-low">
+<img alt="Ceremonial Matcha" class="product-img w-full h-full object-cover transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdM_3hG4kkZrWwa1KxgOTsaVvA9wRVCch-6JNh87tBCkY8zVsdjuTI47A91nhI13-P0Rox8Ik3zHm25isCrXDZeW358riuGFDn2Soi2oxQ1loyI_JdwONWp3Q346YY-fpCKY3SVa-qiGBJsARYOgzDgesjGHOwGAT295XrRJ4Q9K1JZ0PXARghGzXnBe2SurxJX-xZpeHfyBgb7tiD2SqHXK3PrdgdXQ1_nlONA7ZGIQF-ZdN4Ii-b172mKXGbpgJqsZut27_OL1Hd"/>
+</div>
+<div class="p-stack-md flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">Ceremonial Matcha</h3>
+<span class="font-label-md text-label-md text-secondary">Rp 25.000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Stone-ground, vibrant green powder sourced from Kyoto's finest shaded tea leaves.</p>
+<button class="btn-elevated mt-stack-sm w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container" onclick="addToCart('Ceremonial Matcha', 25000, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDdM_3hG4kkZrWwa1KxgOTsaVvA9wRVCch-6JNh87tBCkY8zVsdjuTI47A91nhI13-P0Rox8Ik3zHm25isCrXDZeW358riuGFDn2Soi2oxQ1loyI_JdwONWp3Q346YY-fpCKY3SVa-qiGBJsARYOgzDgesjGHOwGAT295XrRJ4Q9K1JZ0PXARghGzXnBe2SurxJX-xZpeHfyBgb7tiD2SqHXK3PrdgdXQ1_nlONA7ZGIQF-ZdN4Ii-b172mKXGbpgJqsZut27_OL1Hd')">Add to Cart</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="reveal product-card-hover bg-surface border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col group">
+<div class="aspect-square overflow-hidden bg-surface-container-low">
+<img alt="Velvet Chocolate" class="product-img w-full h-full object-cover transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD25tiItL5tze5Q1-OWFck87u2n9U19VdtNMawnmgJgFTDyiXL63EeYQoh8K3uaWTK_IYODHQnQDDdGz07Zj6yb9xT0I5Qlzw3Ff1Q8_eAAV_rr7BHFVamPqWXVlWsHZ_WE1Nvl1tTOlbLvuUxcMkVVYVZM2HUIY2u469-xzi37t-VXeGW4wdOw8wRdnIRJFiwfyAvTwNEOEBYFRV4rf3TfJ9gLs9zjetzP8VoqhFiOiCgqVUXCR9CN0Oau3___hmu6KJOjn_nQbNnM"/>
+</div>
+<div class="p-stack-md flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">Velvet Chocolate</h3>
+<span class="font-label-md text-label-md text-secondary">Rp 25.000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">70% heirloom cacao whisked into a silky, indulgent elixir with hints of caramel.</p>
+<button class="btn-elevated mt-stack-sm w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container" onclick="addToCart('Velvet Chocolate', 25000, 'https://lh3.googleusercontent.com/aida-public/AB6AXuD25tiItL5tze5Q1-OWFck87u2n9U19VdtNMawnmgJgFTDyiXL63EeYQoh8K3uaWTK_IYODHQnQDDdGz07Zj6yb9xT0I5Qlzw3Ff1Q8_eAAV_rr7BHFVamPqWXVlWsHZ_WE1Nvl1tTOlbLvuUxcMkVVYVZM2HUIY2u469-xzi37t-VXeGW4wdOw8wRdnIRJFiwfyAvTwNEOEBYFRV4rf3TfJ9gLs9zjetzP8VoqhFiOiCgqVUXCR9CN0Oau3___hmu6KJOjn_nQbNnM')">Add to Cart</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="reveal product-card-hover bg-surface border border-outline-variant/20 rounded-xl overflow-hidden flex flex-col group">
+<div class="aspect-square overflow-hidden bg-surface-container-low">
+<img alt="Lavender Taro" class="product-img w-full h-full object-cover transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDECSC5wjtcMLDBGtHZGQvGB6uCor8ruvlA7k5iz3atmbt38OsBSvL5CrzChorYhE6ZEo6CoMJlPfN2MEOCrIn-0sJPmrOBlK_VcVoUU_qu46y9x4lxW2nSyCQRoQGiIGKPz0herFdlbTZqEVTUm_50J3kb7EchN1GmZyHWJuv30toQdfBVeupTaBjBuxMd2TeXhCiz4BApcFBcjAZ_UausN_zV5dbQTSyLBbw4umhIEV6lnjVeHdPIZJ4Pfp59kvdLgQ81sdXwp0aq"/>
+</div>
+<div class="p-stack-md flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-headline-md text-on-surface">Lavender Taro</h3>
+<span class="font-label-md text-label-md text-secondary">Rp 25.000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Earthy taro roots infused with French lavender blossoms for a dreamy floral finish.</p>
+<button class="btn-elevated mt-stack-sm w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container" onclick="addToCart('Lavender Taro', 25000, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDECSC5wjtcMLDBGtHZGQvGB6uCor8ruvlA7k5iz3atmbt38OsBSvL5CrzChorYhE6ZEo6CoMJlPfN2MEOCrIn-0sJPmrOBlK_VcVoUU_qu46y9x4lxW2nSyCQRoQGiIGKPz0herFdlbTZqEVTUm_50J3kb7EchN1GmZyHWJuv30toQdfBVeupTaBjBuxMd2TeXhCiz4BApcFBcjAZ_UausN_zV5dbQTSyLBbw4umhIEV6lnjVeHdPIZJ4Pfp59kvdLgQ81sdXwp0aq')">Add to Cart</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-padding px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter mt-stack-lg bg-surface-container border-t border-outline-variant/10">
+<div class="reveal flex flex-col gap-stack-sm">
+<div class="font-headline-md text-headline-md text-primary italic">Botanical Brews</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Artisanal beverages crafted with serenity and intention in every drop.</p>
+</div>
+<div class="reveal flex flex-col gap-stack-sm">
+<h4 class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-widest">Connect</h4>
+<div class="flex flex-col gap-2">
+<a class="nav-link w-fit font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Sustainability</a>
+<a class="nav-link w-fit font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Wholesale</a>
+<a class="nav-link w-fit font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a>
+<a class="nav-link w-fit font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy</a>
+</div>
+</div>
+<div class="reveal flex flex-col gap-stack-sm">
+<h4 class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-widest">Newsletter</h4>
+<div class="flex gap-2">
+<input class="bg-surface border border-outline-variant/30 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-primary transition-colors text-body-md" placeholder="Email address" type="email"/>
+<button class="btn-elevated bg-primary text-on-primary px-4 py-2 rounded-lg font-label-sm text-label-sm">Join</button>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant/70 mt-2">© 2024 Botanical Brews. Crafted with serenity.</p>
+</div>
+</footer>
+<!-- Cart Sidebar -->
+<div class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[55] opacity-0 pointer-events-none transition-opacity duration-500" id="cartOverlay"></div>
+<div class="fixed right-0 top-0 h-full w-full md:w-[450px] z-[60] bg-surface border-l border-outline-variant/30 shadow-[-10px_0_30px_rgba(45,41,38,0.05)] cart-drawer-transform translate-x-full flex flex-col" id="cartDrawer">
+<div class="p-stack-md border-b border-outline-variant/20 flex justify-between items-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-secondary">Your Selection</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Artisanal brews for your ritual</p>
+</div>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors" id="closeCart">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-grow overflow-y-auto p-stack-md flex flex-col gap-stack-sm" id="cartItems">
+<!-- Items appear here -->
+<div class="flex flex-col items-center justify-center h-full text-on-surface-variant/50 gap-stack-sm" id="emptyCart">
+<span class="material-symbols-outlined text-5xl">shopping_basket</span>
+<p class="font-body-md">Your basket is waiting to be filled.</p>
+</div>
+</div>
+<div class="p-stack-md bg-surface-container-low border-t border-outline-variant/30">
+<div class="flex flex-col gap-stack-sm mb-stack-md">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-headline-md text-headline-md text-on-surface" id="cartSubtotal">Rp 0</span>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<input class="bg-surface border border-outline-variant/30 rounded-lg px-4 py-2 focus:outline-none focus:border-primary transition-colors text-body-md" id="custName" placeholder="Full Name" type="text"/>
+<textarea class="bg-surface border border-outline-variant/30 rounded-lg px-4 py-2 focus:outline-none focus:border-primary transition-colors text-body-md resize-none" id="custAddress" placeholder="Delivery Address" rows="2"></textarea>
+</div>
+</div>
+<button class="btn-elevated w-full bg-secondary text-on-secondary py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-on-secondary-container active:scale-[0.98]" onclick="checkoutWhatsApp()">
+<span class="material-symbols-outlined">chat</span>
+            Checkout via WhatsApp
+        </button>
+</div>
+</div>
+<script>
+    // Intersection Observer for Reveal Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Cart Logic
+    let cart = [];
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartItemsContainer = document.getElementById('cartItems');
+    const cartSubtotalEl = document.getElementById('cartSubtotal');
+    const cartCountEl = document.getElementById('cartCount');
+    const emptyCartMsg = document.getElementById('emptyCart');
+    const cartIcon = document.getElementById('cartIcon');
+
+    function toggleCart(isOpen) {
+        if (isOpen) {
+            cartDrawer.classList.remove('translate-x-full');
+            cartOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        } else {
+            cartDrawer.classList.add('translate-x-full');
+            cartOverlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+    }
+
+    document.getElementById('openCart').onclick = () => toggleCart(true);
+    document.getElementById('closeCart').onclick = () => toggleCart(false);
+    cartOverlay.onclick = () => toggleCart(false);
+
+    function triggerCartAnimation() {
+        cartIcon.classList.remove('animate-cart-bounce');
+        void cartIcon.offsetWidth; // Trigger reflow
+        cartIcon.classList.add('animate-cart-bounce');
+    }
+
+    function addToCart(name, price, img) {
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            cart.push({ name, price, img, quantity: 1 });
+        }
+        updateCartUI();
+        triggerCartAnimation();
+        toggleCart(true);
+    }
+
+    function updateQuantity(name, delta) {
+        const index = cart.findIndex(item => item.name === name);
+        if (index > -1) {
+            cart[index].quantity += delta;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+        }
+        updateCartUI();
+    }
+
+    function updateCartUI() {
+        cartItemsContainer.innerHTML = '';
+        
+        if (cart.length === 0) {
+            cartItemsContainer.appendChild(emptyCartMsg);
+            cartSubtotalEl.innerText = 'Rp 0';
+            cartCountEl.innerText = '0';
+            return;
+        }
+
+        let total = 0;
+        let count = 0;
+
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            count += item.quantity;
+
+            const itemEl = document.createElement('div');
+            itemEl.className = 'flex gap-4 items-center bg-surface border border-outline-variant/20 p-3 rounded-lg animate-fade-in transition-all duration-300';
+            itemEl.innerHTML = `
+                <img src="${item.img}" class="w-16 h-16 object-cover rounded-md bg-surface-container">
+                <div class="flex-grow">
+                    <h4 class="font-label-md text-on-surface">${item.name}</h4>
+                    <p class="font-label-sm text-secondary">Rp ${item.price.toLocaleString('id-ID')}</p>
+                </div>
+                <div class="flex items-center gap-2 border border-outline-variant/30 rounded-lg px-2 py-1">
+                    <button onclick="updateQuantity('${item.name}', -1)" class="material-symbols-outlined text-sm hover:text-primary transition-colors">remove</button>
+                    <span class="font-label-md w-4 text-center">${item.quantity}</span>
+                    <button onclick="updateQuantity('${item.name}', 1)" class="material-symbols-outlined text-sm hover:text-primary transition-colors">add</button>
+                </div>
+            `;
+            cartItemsContainer.appendChild(itemEl);
+        });
+
+        cartSubtotalEl.innerText = `Rp ${total.toLocaleString('id-ID')}`;
+        cartCountEl.innerText = count;
+    }
+
+    function checkoutWhatsApp() {
+        const name = document.getElementById('custName').value.trim();
+        const address = document.getElementById('custAddress').value.trim();
+        const phone = '6289777736286';
+
+        if (cart.length === 0) {
+            alert('Your cart is empty.');
+            return;
+        }
+        if (!name || !address) {
+            alert('Silakan lengkapi nama dan alamat pengiriman.');
+            return;
+        }
+
+        let message = `Halo Botanical Brews, saya ingin memesan:\n\n`;
+        let total = 0;
+
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            message += `- ${item.quantity}x ${item.name} (Rp ${itemTotal.toLocaleString('id-ID')})\n`;
+            total += itemTotal;
+        });
+
+        message += `\nTotal: Rp ${total.toLocaleString('id-ID')}\n\n`;
+        message += `Berikut data saya:\nNama: ${name}\nAlamat: ${address}`;
+
+        const encodedText = encodeURIComponent(message);
+        
+        // Robust Device Detection
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        let whatsappUrl;
+        if (isMobile) {
+            // Direct deep link for mobile apps
+            whatsappUrl = `whatsapp://send?phone=${phone}&text=${encodedText}`;
+        } else {
+            // Instant WhatsApp Web link for desktop browsers
+            whatsappUrl = `https://web.whatsapp.com/send?phone=${phone}&text=${encodedText}`;
+        }
+
+        // Open the URL in a new tab/window for better UX
+        window.open(whatsappUrl, '_blank');
+    }
+    
+    // Ensure entrance animations run once on load
+    window.addEventListener('load', () => {
+        document.querySelector('.reveal').classList.add('active');
+    });
+</script>
+</body></html>
